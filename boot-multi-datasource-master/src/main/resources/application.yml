@@ -1,0 +1,44 @@
+spring:
+  redis:
+    host: 192.168.0.66
+    port: 6379
+    password: 
+    database: 0
+    max-idle: 8
+    min-idle: 0
+    max-active: 8
+    maxwait: -1
+    timeout: 0
+  datasource:
+    url: jdbc:mysql://192.168.0.66:3306/test?characterEncoding=utf-8&useSSL=false
+    testWhileIdle: true
+    validationQuery: SELECT 1 from dual
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      show-sql: true
+      ddl-auto: create
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+other:
+  datasource:
+    url: jdbc:mysql://192.168.0.66:3306/other?characterEncoding=utf-8&useSSL=false
+    testWhileIdle: true
+    validationQuery: SELECT 1
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      show-sql: true
+      ddl-auto: create
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
